@@ -1,0 +1,48 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+   <item  android:id="@+id/home_customer"
+       android:title="@string/home"></item>
+
+
+    <item
+        android:title="@string/Manage_Requests">
+    <menu>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/leasing_request"
+            android:title="@string/Leasing_Requests" />
+        <item
+            android:id="@+id/sale_request"
+            android:title="@string/sale_requests" />
+        <item
+            android:id="@+id/maintenance_request"
+            android:title="@string/Maintenance_Requests" />
+        </group>
+       </menu>
+    </item>
+
+
+    <item
+        android:title="@string/setting"
+       >
+<menu>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/update_info"
+            android:title="@string/Update_account"
+             />
+
+      </group>
+</menu>
+    </item>
+
+
+    <group android:checkableBehavior="single">
+    <item
+        android:id="@+id/logout"
+        android:title="@string/logout"
+         />
+
+      </group>
+     </menu>
+
+

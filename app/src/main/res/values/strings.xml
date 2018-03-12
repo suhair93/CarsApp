@@ -1,0 +1,78 @@
+<resources>
+    <string name="app_name">car services</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="wellcom">wellcome in cars application</string>
+    <string name="login">Login</string>
+    <string name="signup">signup</string>
+    <string name="phone_number">phone number</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="street">Street</string>
+    <string name="next">Next</string>
+    <string name="location">Location</string>
+    <string name="zip">zip code</string>
+    <string name="city">City</string>
+    <string name="type">Type :</string>
+    <string name="type_view">type view </string>
+    <string name="customer">Customer</string>
+    <string name="company">Company</string>
+    <string name="or">OR</string>
+    <string name="Leasing_request">Leasing request</string>
+    <string name="car_type">car type</string>
+    <string name="car_model">car model</string>
+    <string name="car_details">car details</string>
+    <string name="choose_location">Choose company location</string>
+    <string name="show_result">show result</string>
+    <string name="show_service">show services</string>
+    <string name="Rent_request">Rent request</string>
+    <string name="Rent">Rent</string>
+    <string name="maintenance">maintenance</string>
+    <string name="Explain_the_service_you_need">Explain the service you need</string>
+    <string name="name_owner">name owner</string>
+    <string name="phone_owner">phone owner </string>
+    <string name="upload_Image">upload Image :</string>
+    <string name="submit">submit</string>
+    <string name="price">price</string>
+    <string name="price_car">car price</string>
+    <string name="details">Details ></string>
+    <string name="part_name">part name</string>
+    <string name="part_model">part model</string>
+    <string name="part_price">part price</string>
+    <string name="part_details">part details </string>
+    <string name="saleing">saleing</string>
+    <string name="Leasing">Leasing</string>
+    <string name="update">Update</string>
+    <string name="Enter_city">Enter city </string>
+    <string name="Choose_services">Choose services </string>
+    <string name="name_saller">name saller </string>
+    <string name="phone_saller">phone saller</string>
+    <string name="home">Home</string>
+    <string name="setting">Setting</string>
+    <string name="add_requests">Add request</string>
+    <string name="spare_parts">spare parts</string>
+    <string name="cars">Cars</string>
+    <string name="Manage_Requests">Manage Requests</string>
+    <string name="Buy_Requests">Buy Requests</string>
+    <string name="Maintenance_Requests">Maintenance Requests</string>
+    <string name="Leasing_Requests">Leasing Requests</string>
+    <string name="Update_account">Update account</string>
+<string name="add_services">Add services</string>
+    <string name="sale_requests">Saleing Requests</string>
+    <string name="logout">Logout</string>
+    <string name="are_u_sure_exit">are you sure exit?</string>
+    <string name="yes">YES</string>
+    <string name="no">NO</string>
+    <string name="part_number">part number</string>
+    <string name="Manage_requests_buy"> Manage requests buy </string>
+    <string name="Manage_requests_maintenance">Manage requests maintenance</string>
+    <string name="Manage_requests_leasing">Manage requests leasing</string>
+
+
+
+
+
+
+
+</resources>

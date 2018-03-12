@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baj"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layoutDirection="ltr"
+            android:background="@color/colorPrimaryDark"
+            >
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/back"
+                android:src="?android:attr/homeAsUpIndicator" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/Leasing_request"
+                android:gravity="center"
+                android:textColor="@color/baj"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:fontFamily="casual"
+                android:layout_marginLeft="30dp"/>
+
+
+
+        </Toolbar>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="50dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/car_type"
+                android:hint="@string/car_type"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/saller_name"
+                android:hint="@string/car_model"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="17dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="casual"
+                android:layout_gravity="center_vertical"
+                android:textStyle="bold"
+                android:text="@string/choose_location"
+                />
+            <ImageButton
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@drawable/map"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/show_result"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:background="@color/colorPrimaryDark"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

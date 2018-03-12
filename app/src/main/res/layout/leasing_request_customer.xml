@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/baj"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/logo"/>
+
+        <Button
+            android:id="@+id/leas"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/Leasing"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="casual"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+        <Button
+            android:id="@+id/rent"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="@string/Rent"
+            android:gravity="center"
+            android:background="@color/colorPrimary"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:layout_marginTop="20dp"
+            android:textSize="20dp"
+            android:textColor="@color/white"
+            android:fontFamily="casual"
+            android:textStyle="bold"/>
+    </LinearLayout>
+</ScrollView>

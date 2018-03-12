@@ -1,0 +1,153 @@
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg1"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/baj"
+android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp">
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/part_name"
+                android:paddingRight="10dp"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="part name"
+                android:id="@+id/part_name"
+                android:fontFamily="casual"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+</LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/part_number"
+                    android:paddingRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="part name"
+                    android:id="@+id/part_number"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/part_model"
+                    android:layout_marginRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="part model"
+                    android:id="@+id/part_model"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/part_price"
+                    android:paddingRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="part price"
+                    android:id="@+id/part_price"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/part_details"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="casual"
+
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="part details "
+                android:layout_marginTop="10dp"
+                android:fontFamily="casual"
+                android:id="@+id/car_details"
+                android:textStyle="bold"
+                android:textSize="17dp"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+                android:gravity="center"
+                >
+
+
+                <ImageButton
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:background="@android:drawable/ic_menu_upload"
+                    />
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</ScrollView>

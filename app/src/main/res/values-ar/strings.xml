@@ -1,0 +1,76 @@
+<resources>
+    <string name="app_name">خدمة المركبات </string>
+    <string name="drawer_open">فتح</string>
+    <string name="drawer_close">اغلاق</string>
+    <string name="wellcom">اهلا بك في تطبيق خدمة المركبات </string>
+    <string name="login">تسجيل دخول</string>
+    <string name="signup">حساب جديد</string>
+    <string name="phone_number">رقم الجوال</string>
+    <string name="name">الاسم</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">الرقم السري</string>
+    <string name="street">الشارع</string>
+    <string name="next">التالي</string>
+    <string name="location">المكان</string>
+    <string name="zip">كود الدولة</string>
+    <string name="city">المدينة</string>
+    <string name="type">النوع :</string>
+    <string name="type_view">نوع العرض  </string>
+    <string name="customer">عميل</string>
+    <string name="company">شركة</string>
+    <string name="or">أو</string>
+    <string name="Leasing_request">طلب تأجير</string>
+    <string name="car_type">نوع المركبة</string>
+    <string name="car_model">موديل المركبة</string>
+    <string name="car_details">تفاصيل المركبة</string>
+    <string name="choose_location">اختر مكان الشركة او المعرض</string>
+    <string name="show_result">عرض النتائج</string>
+    <string name="show_service">عرض الخدمات </string>
+    <string name="Rent_request">طلب استأجار</string>
+    <string name="Rent">استأجار</string>
+    <string name="maintenance">صيانة</string>
+    <string name="Explain_the_service_you_need">ادخل الخدمة التى تحتاجها</string>
+
+    <string name="name_owner">اسم المالك</string>
+    <string name="phone_owner">رقم هاتف المالك </string>
+    <string name="upload_Image">رفع صورة :</string>
+    <string name="submit">تم</string>
+    <string name="price">السعر</string>
+    <string name="price_car">سعر المركبة</string>
+    <string name="details">التفاصيل  </string>
+    <string name="part_name">قطعة الغيار</string>
+    <string name="part_model">موديل قطعة الغيار</string>
+    <string name="part_price">سعر القطعة</string>
+    <string name="part_details">تفاصيل أكثر عن قطعة الغيار </string>
+    <string name="saleing">بيع</string>
+    <string name="Leasing">تأجير</string>
+    <string name="update">تحديث</string>
+    <string name="Enter_city">ادخل المدينة </string>
+    <string name="Choose_services">اختر الخدمة </string>
+    <string name="name_saller">اسم البائع</string>
+    <string name="phone_saller">رقم هاتف البائع</string>
+    <string name="home">الرئيسية</string>
+    <string name="part_number">رقم الفطعة</string>
+    <string name="setting">الإعدادات</string>
+    <string name="add_requests">إضافة طلب</string>
+    <string name="spare_parts">قطع غيار</string>
+    <string name="cars">المركبات</string>
+    <string name="Manage_Requests">إدارة الطلبات</string>
+    <string name="Buy_Requests">طلبات الشراء</string>
+    <string name="Maintenance_Requests">طلبات الصيانة</string>
+    <string name="Leasing_Requests">طلبات التأجير </string>
+    <string name="Update_account">تحديث الحساب</string>
+    <string name="add_services">إضافة خدمة</string>
+    <string name="sale_requests">طلبات البيع </string>
+    <string name="logout">خروج</string>
+    <string name="are_u_sure_exit">هل انت متأكد من الخروج</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="Manage_requests_buy">إدارة طلبات الشراء </string>
+    <string name="Manage_requests_maintenance">إدارة طلبات الصيانة</string>
+    <string name="Manage_requests_leasing">إدارة طلبات الإيجار</string>
+
+
+
+
+</resources>
