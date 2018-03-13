@@ -1,38 +1,23 @@
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/baj"
+    android:background="@drawable/bg1"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <!--<Toolbar-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="50dp"-->
-        <!--android:background="@color/colorPrimaryDark"-->
-        <!--&gt;-->
-        <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:text="Sale Request"-->
-        <!--android:gravity="center"-->
-        <!--android:textColor="@color/baj"-->
-        <!--android:textSize="25sp"-->
-        <!--android:textStyle="bold"-->
-        <!--android:fontFamily="casual"-->
-        <!--android:layout_marginLeft="30dp"/>-->
 
-        <!--</Toolbar>-->
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="50dp">
+            android:background="@color/baj"
+          android:layout_gravity="center"
+            android:padding="10dp"
+            android:layout_margin="20dp">
 
 
 
@@ -107,7 +92,7 @@
                 android:textSize="17dp"/>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
 
@@ -122,9 +107,15 @@
                     />
                 <ImageButton
                     android:layout_width="40dp"
-                    android:layout_height="match_parent"
+                    android:id="@+id/img"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
                     android:background="@android:drawable/ic_menu_upload"
                     />
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:id="@+id/showImage"/>
 
             </LinearLayout>
             <Button
@@ -133,6 +124,7 @@
                 android:text="@string/submit"
                 android:textColor="@color/white"
                 android:textSize="20dp"
+                android:id="@+id/add_car"
                 android:layout_marginTop="30dp"
                 android:fontFamily="casual"
                 android:textStyle="bold"

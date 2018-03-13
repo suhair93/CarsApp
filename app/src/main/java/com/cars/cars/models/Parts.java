@@ -10,6 +10,7 @@ public class Parts {
     private String price;
     private String details;
     private String userid;
+    private String number;
     private String imageURL;
     public Parts(){}
 
@@ -19,6 +20,14 @@ public class Parts {
 
     public String getImageURL() {
         return imageURL;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 
     public String getUserid() {

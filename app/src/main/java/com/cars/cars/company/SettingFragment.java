@@ -52,7 +52,7 @@ public class SettingFragment extends Fragment {
     DatabaseReference ref;
     String userID="";
     user user = new user();
-
+    user user1 = new user();
     public SettingFragment() {
         // Required empty public constructor
     }
@@ -102,7 +102,9 @@ public class SettingFragment extends Fragment {
 
                 } else {
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        String pho = user.getPhone();
                         email.setText(user.getEmail());
+                        phone.setText(pho);
                         password.setText(user.getPassword());
                         city.setText(user.getCity());
                         location.setText(user.getLocation());
@@ -128,47 +130,47 @@ public class SettingFragment extends Fragment {
 
 
 
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final String email1 = email.getText().toString().trim();
-                final String password1 = password.getText().toString().trim();
-                final String phone1 = phone.getText().toString().trim();
-                final String name1 = name.getText().toString().trim();
-                final String location1 = location.getText().toString().trim();
-                final String city1 = city.getText().toString().trim();
-                final String zip1 = zip.getText().toString();
-                final String street1 = street.getText().toString();
-                user.setEmail(email1);
-                user.setPassword(password1);
-                user.setPhone(phone1);
-                user.setCity(city1);
-                user.setLocation(location1);
-                user.setZip(zip1);
-                user.setStreet(street1);
-                user.setName(name1);
-                user.setTypeUser(typeUser);
-
-
-                fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-
-                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
-                            snapshot.getRef().setValue(user);
-
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
-            }});
+//        next.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                final String email1 = email.getText().toString().trim();
+//                final String password1 = password.getText().toString().trim();
+//                final String phone1 = phone.getText().toString().trim();
+//                final String name1 = name.getText().toString().trim();
+//                final String location1 = location.getText().toString().trim();
+//                final String city1 = city.getText().toString().trim();
+//                final String zip1 = zip.getText().toString();
+//                final String street1 = street.getText().toString();
+//                user1.setEmail(email1);
+//                user1.setPassword(password1);
+//                user1.setPhone(phone1);
+//                user1.setCity(city1);
+//                user1.setLocation(location1);
+//                user1.setZip(zip1);
+//                user1.setStreet(street1);
+//                user1.setName(name1);
+//                user1.setTypeUser(typeUser);
+//
+//
+//                fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//
+//                        for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+//                            snapshot.getRef().setValue(user1);
+//
+//                        }
+//
+//                    }
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//
+//                    }
+//                });
+//
+//
+//            }});
 
         return view;
     }
