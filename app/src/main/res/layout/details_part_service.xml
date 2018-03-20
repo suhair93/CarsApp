@@ -4,150 +4,292 @@
     android:background="@drawable/bg1"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:background="@color/baj"
-android:layout_gravity="center"
-        android:layout_margin="20dp"
         android:orientation="vertical">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layoutDirection="ltr"
+        android:background="@color/colorPrimaryDark"
+        >
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="10dp">
+            android:id="@+id/back"
+            android:src="?android:attr/homeAsUpIndicator" />
 
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
-    android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/part_name"
-                android:paddingRight="10dp"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="17dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="part name"
-                android:id="@+id/part_name"
-                android:fontFamily="casual"
-                android:textStyle="bold"
-                android:textSize="17dp"/>
-</LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/part_number"
-                    android:paddingRight="10dp"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="part name"
-                    android:id="@+id/part_number"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/part_model"
-                    android:layout_marginRight="10dp"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="part model"
-                    android:id="@+id/part_model"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/part_price"
-                    android:paddingRight="10dp"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="part price"
-                    android:id="@+id/part_price"
-                    android:fontFamily="casual"
-                    android:textStyle="bold"
-                    android:textSize="17dp"/>
-            </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/details"
+            android:gravity="center"
+            android:textColor="@color/baj"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_marginLeft="30dp"/>
 
-            <TextView
+
+
+    </Toolbar>
+
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:background="@color/baj"
+            android:gravity="center"
+            android:orientation="vertical">
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/part_details"
+                android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"
-                android:fontFamily="casual"
+                android:orientation="vertical">
 
-                android:textStyle="bold"
-                android:textSize="17dp"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="part details "
-                android:layout_marginTop="10dp"
-                android:fontFamily="casual"
-                android:id="@+id/car_details"
-                android:textStyle="bold"
-                android:textSize="17dp"/>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center"
-                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
 
+                    >
 
-                <ImageButton
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@android:drawable/ic_menu_upload"
-                    />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
+                        android:orientation="vertical"
+
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:paddingRight="10dp"
+                                android:text="@string/part_name"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/part_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:text="part name"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:paddingRight="10dp"
+                                android:text="@string/part_number"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/part_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:text=" number"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="10dp"
+                                android:fontFamily="casual"
+                                android:text="@string/part_model"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/part_model"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:text="part model"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:paddingRight="10dp"
+                                android:text="@string/part_price"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/part_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="casual"
+                                android:text="part price"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textSize="17dp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:fontFamily="casual"
+                            android:text="@string/part_details"
+
+                            android:textSize="17dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/img"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:src="@android:drawable/ic_menu_report_image" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/part_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="casual"
+                    android:text="part details "
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_name"
+                        android:paddingRight="10dp"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="company"
+                        android:id="@+id/company_name"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_address"
+                        android:paddingRight="10dp"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_address"
+                        android:id="@+id/company_address"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17dp"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_phone"
+                        android:paddingRight="10dp"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textSize="17dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/company_phone"
+                        android:id="@+id/company_phone"
+                        android:fontFamily="casual"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="17dp"/>
+                </LinearLayout>
             </LinearLayout>
 
+
+            <Button
+                android:id="@+id/buy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+
+                android:background="@color/c3"
+                android:text=" payment "
+                android:textColor="@color/white"
+                android:textSize="19dp"
+
+                android:textStyle="bold"
+
+                />
 
 
         </LinearLayout>
-
-
     </LinearLayout>
 </ScrollView>

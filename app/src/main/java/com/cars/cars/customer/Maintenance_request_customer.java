@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.cars.cars.R;
 
@@ -14,6 +16,8 @@ import com.cars.cars.R;
  * A simple {@link Fragment} subclass.
  */
 public class Maintenance_request_customer extends Fragment {
+   EditText expline;
+   Button show_result;
 
 
     public Maintenance_request_customer() {
@@ -26,6 +30,10 @@ public class Maintenance_request_customer extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.maintenance_request_customer, container, false);
+
+
+
+
         return view;
     }
 

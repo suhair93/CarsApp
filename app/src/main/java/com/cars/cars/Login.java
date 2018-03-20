@@ -1,13 +1,19 @@
 package com.cars.cars;
 
+import android.*;
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
@@ -22,6 +28,7 @@ import com.cars.cars.company.Home_company;
 import com.cars.cars.company.MainCompany;
 import com.cars.cars.customer.Home_customer;
 import com.cars.cars.customer.MainCustomer;
+import com.cars.cars.helper.GPSTracker;
 import com.cars.cars.models.user;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -48,6 +55,7 @@ public class Login  extends AppCompatActivity {
     Button login;
     FirebaseDatabase database;
     DatabaseReference ref;
+
    List<user> userlist= new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +86,7 @@ public class Login  extends AppCompatActivity {
         //Get Firebase auth instance
        // auth = FirebaseAuth.getInstance();
         // تعريف المتغيرات وربطها بالواجهات
+
         login = (Button) findViewById(R.id.login);
         inputUsername = (EditText) findViewById(R.id.phone);
         inputPassword = (EditText) findViewById(R.id.password);
@@ -111,67 +120,77 @@ public class Login  extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                dialog.show();
-                //authenticate user
 
 
-                Query fireQuery = ref.child("user").orderByChild("phone").equalTo(username);
-                fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.getValue() == null) {
-                            Toast.makeText(Login.this, "Not found", Toast.LENGTH_SHORT).show();
-                            dialog.dismiss();
-                        } else {
-                            List<user> searchList = new ArrayList<user>();
-                            for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                                user user = snapshot.getValue(user.class);
-                                searchList.add(user);
+
+                    dialog.show();
+                    //authenticate user
+
+
+                    Query fireQuery = ref.child("user").orderByChild("phone").equalTo(username);
+                    fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.getValue() == null) {
+                                Toast.makeText(Login.this, "Not found", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            } else {
+                                List<user> searchList = new ArrayList<user>();
+                                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                                    user user = snapshot.getValue(user.class);
+                                    searchList.add(user);
+
+                                }
+
+                                for (int i = 0; i < searchList.size(); i++) {
+
+                                    if (searchList.get(i).getPhone().equals(username) && searchList.get(i).getPassword().equals(password)) {
+
+                                        SharedPreferences.Editor editor = getSharedPreferences("company", MODE_PRIVATE).edit();
+                                        if (searchList.get(i).getTypeUser().equals("company")) {
+                                            editor.putString(Keys.KEY_COMPANY, username);
+                                            editor.putString(Keys.KEY_CITY, searchList.get(i).getCity());
+                                            editor.putString(Keys.KEY_NAME, searchList.get(i).getName());
+                                            editor.putString(Keys.KEY_PHONE, searchList.get(i).getPhone());
+                                            editor.putString(Keys.KEY_STREET, searchList.get(i).getStreet());
+                                            editor.apply();
+                                            dialog.dismiss();
+                                            Intent intent = new Intent(Login.this, MainCompany.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+                                        }
+                                        if (searchList.get(i).getTypeUser().equals("customer")) {
+                                            editor.putString(Keys.KEY_COMPANY, username);
+                                            editor.putString(Keys.KEY_CITY, searchList.get(i).getCity());
+                                            editor.putString(Keys.KEY_NAME, searchList.get(i).getName());
+                                            editor.putString(Keys.KEY_PHONE, searchList.get(i).getPhone());
+                                            editor.putString(Keys.KEY_STREET, searchList.get(i).getStreet());
+                                            editor.apply();
+                                            dialog.dismiss();
+                                            Intent intent = new Intent(Login.this, MainCustomer.class);
+                                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                            startActivity(intent);
+                                            finish();
+
+                                        }
+                                    } else {
+                                        Toast.makeText(Login.this, "invalid user name or password", Toast.LENGTH_SHORT).show();
+                                    }
+
+                                }
+
+
+                                dialog.dismiss();
 
                             }
+                        }
 
-                            for(int i=0;i<searchList.size();i++){
-
-                                if(searchList.get(i).getPhone().equals(username) && searchList.get(i).getPassword().equals(password)) {
-                                    SharedPreferences.Editor editor = getSharedPreferences("company", MODE_PRIVATE).edit();
-                                    if (searchList.get(i).getTypeUser().equals("company")) {
-                                        editor.putString(Keys.KEY_COMPANY, username);
-                                        editor.apply();
-                                        dialog.dismiss();
-                                        Intent intent = new Intent(Login.this, MainCompany.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                    if (searchList.get(i).getTypeUser().equals("customer") ) {
-                                        editor.putString(Keys.KEY_COMPANY, username);
-                                        editor.apply();
-                                        dialog.dismiss();
-                                        Intent intent = new Intent(Login.this, MainCustomer.class);
-                                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                                        startActivity(intent);
-                                        finish();
-
-                                    }
-
-                                }else{ Toast.makeText(Login.this, "invalid user name or password", Toast.LENGTH_SHORT).show();}
-
-                            }
-
-
-                            dialog.dismiss();
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
                         }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
-
-
-
+                    });
 
 
 
@@ -185,6 +204,7 @@ public class Login  extends AppCompatActivity {
 
 
     }
+
 
 
 

@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:lines="3"
-                android:id="@+id/saller_name"
+                android:id="@+id/maintenance_request"
                 android:gravity="top"
                 android:hint="@string/Explain_the_service_you_need"
                 android:fontFamily="casual"
@@ -40,11 +40,12 @@
                     android:layout_gravity="center_vertical"
                     android:textStyle="bold"
                     android:text="@string/choose_location" />
-                <ImageButton
-                    android:layout_marginTop="20dp"
+
+                <include
+                    android:layout_height="300dp"
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@drawable/map"/>
+                    layout="@layout/activity_maps"
+                    android:id="@+id/map"/>
 
 
             <Button

@@ -32,6 +32,7 @@ import android.widget.Toast;
 import com.cars.cars.Keys;
 import com.cars.cars.R;
 import com.cars.cars.models.Car;
+import com.cars.cars.models.service;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DatabaseReference;
@@ -54,7 +55,7 @@ import static android.content.Context.MODE_PRIVATE;
 public class add_car_service extends Fragment {
     private CheckBox checkBox_leasing, checkBox_saleing;
     private EditText car_type,car_model,car_price,details;
-    private String type_view = "",imgLoad="",imgURL="";
+    private String type_view = "",companyname="",imgURL="";
     private ImageButton upload_img;
     private Button add;
     private ImageView car;
@@ -66,7 +67,7 @@ public class add_car_service extends Fragment {
     public static final String DATABASE_PATH_UPLOADS = "uploads";
     //uri to store file
     private Uri filePath;
-    String Token="";
+    String Token="",city="",street="",phone="";
     //constant to track image chooser intent
     private static final int PICK_IMAGE_REQUEST = 234;
     ProgressDialog progressDialog ;
@@ -95,7 +96,10 @@ public class add_car_service extends Fragment {
 
         SharedPreferences prefs = getActivity().getSharedPreferences("company", MODE_PRIVATE);
         Token = prefs.getString(Keys.KEY_COMPANY, "");
-
+        city = prefs.getString(Keys.KEY_CITY,"");
+        phone =prefs.getString(Keys.KEY_PHONE, "");
+        street = prefs.getString(Keys.KEY_STREET, "");
+        companyname = prefs.getString(Keys.KEY_NAME, "");
         //choose laesing or saleing check box
         checkBox_leasing.setOnClickListener(new View.OnClickListener() {
 
@@ -103,7 +107,7 @@ public class add_car_service extends Fragment {
             public void onClick(View v) {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
-                 type_view = R.string.Leasing+"";
+                 type_view = getString(R.string.Leasing);
                 }
 
             }
@@ -116,7 +120,7 @@ public class add_car_service extends Fragment {
             public void onClick(View v) {
                 //is chkIos checked?
                 if (((CheckBox) v).isChecked()) {
-                  type_view = R.string.saleing+"";
+                  type_view = getString(R.string.saleing);
                 }
 
             }
@@ -190,18 +194,23 @@ return view;
                             progressDialog.dismiss();
 
                             //displaying success toast
-                            Toast.makeText(getActivity(), "image Uploaded ", Toast.LENGTH_LONG).show();
 
-                            Car car = new Car();
-                            car.setType(car_type.getText().toString());
+
+                            service car = new service();
+                            car.setType_service("car");
+                            car.setName_or_type(car_type.getText().toString());
                             car.setModel(car_model.getText().toString());
                             car.setPrice(car_price.getText().toString());
                             car.setDetails(details.getText().toString());
                             car.setTypeView(type_view);
+                            car.setNumber("");
                             car.setUserid(Token);
+                            car.setCity(city);
+                            car.setCompany(companyname);
                             car.setImageURL(taskSnapshot.getDownloadUrl().toString());
+                            ref.child("service").push().setValue(car);
                             ref.child("car").push().setValue(car);
-
+                            Toast.makeText(getActivity(), "image Uploaded ", Toast.LENGTH_LONG).show();
 
                         }
                     })

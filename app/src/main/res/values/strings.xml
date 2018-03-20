@@ -34,9 +34,11 @@
     <string name="phone_owner">phone owner </string>
     <string name="upload_Image">upload Image :</string>
     <string name="submit">submit</string>
-    <string name="price">price</string>
+    <string name="price">price :</string>
+    <string name="buy">buy</string>
     <string name="price_car">car price</string>
-    <string name="details">Details ></string>
+    <string name="details">Details :</string>
+
     <string name="part_name">part name</string>
     <string name="part_model">part model</string>
     <string name="part_price">part price</string>
@@ -58,7 +60,7 @@
     <string name="Maintenance_Requests">Maintenance Requests</string>
     <string name="Leasing_Requests">Leasing Requests</string>
     <string name="Update_account">Update account</string>
-<string name="add_services">Add services</string>
+    <string name="add_services">Add services</string>
     <string name="sale_requests">Saleing Requests</string>
     <string name="logout">Logout</string>
     <string name="are_u_sure_exit">are you sure exit?</string>
@@ -70,8 +72,23 @@
     <string name="Manage_requests_leasing">Manage requests leasing</string>
 
 
+    <string name="purchase">Purchase</string>
+    <string name="valid">Form is valid</string>
+    <string name="invalid">Form is invalid</string>
+    <string name="light_theme_form">Light Theme</string>
+    <string name="dark_theme_form">Dark Theme</string>
+    <string name="scan_with_card_io">Scan with card.io</string>
 
 
+
+   <string name="company_name">company name </string>
+    <string name="buyer_name">buyer name </string>
+    <string name="company_address">company address</string>
+    <string name="company_phone">company phone</string>
+    <string name="payment">payment</string>
+    <string name="send_request">send request</string>
+    <string name="model">model </string>
+    <string name="type_service">type service </string>
 
 
 

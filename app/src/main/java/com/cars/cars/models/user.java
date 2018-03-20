@@ -14,6 +14,8 @@ public class user {
     private String street;
     private String zip;
     private String email;
+    private double longitude;
+    private double latitude;
 
 
     public user(){}
@@ -22,6 +24,22 @@ public class user {
         this.name=username;
         this.password=password;
         this.typeUser=typeUser;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public String getCity() {

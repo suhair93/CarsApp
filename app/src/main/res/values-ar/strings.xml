@@ -14,6 +14,7 @@
     <string name="location">المكان</string>
     <string name="zip">كود الدولة</string>
     <string name="city">المدينة</string>
+    <string name="b">شراء</string>
     <string name="type">النوع :</string>
     <string name="type_view">نوع العرض  </string>
     <string name="customer">عميل</string>

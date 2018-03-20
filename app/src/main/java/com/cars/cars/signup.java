@@ -1,11 +1,17 @@
 package com.cars.cars;
 
+import android.*;
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -16,6 +22,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.cars.cars.helper.GPSTracker;
 import com.cars.cars.models.user;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +46,17 @@ public class signup extends AppCompatActivity{
     ImageView back;
     FirebaseDatabase database;
     DatabaseReference ref;
+    boolean IS_GPS_GRANTED = false;
+    View mLayout;
+    GPSTracker gps;
+    private static final int REQUEST_GPS = 101;
+    private static final int REQUEST_PHONE_STATE = 100;
+    private static final int REQUEST_ALL = 110;
 
+    private static String[] PERMISSIONS_ALL = {android.Manifest.permission.ACCESS_FINE_LOCATION
+            , Manifest.permission.READ_PHONE_STATE};
+
+    boolean IS_ALL_GRANTED = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +69,7 @@ public class signup extends AppCompatActivity{
             window1.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window1.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
-
+        mLayout = findViewById(R.id.view);
         name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
         password = (EditText) findViewById(R.id.password);
@@ -74,6 +91,7 @@ public class signup extends AppCompatActivity{
 
         database = FirebaseDatabase.getInstance();
         ref = database.getReference();
+
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,89 +124,193 @@ public class signup extends AppCompatActivity{
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final String email1 = email.getText().toString().trim();
-                final String password1 = password.getText().toString().trim();
-                final String phone1 = phone.getText().toString().trim();
-                final String name1 = name.getText().toString().trim();
-                final String location1 = location.getText().toString().trim();
-                final String city1 = city.getText().toString().trim();
 
-                final String zip1 = zip.getText().toString();
-                final String street1 = street.getText().toString();
+                IS_ALL_GRANTED = (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                        == PackageManager.PERMISSION_GRANTED);
 
-                if (TextUtils.isEmpty(phone1)) {
-                    Toast.makeText(getApplicationContext(), "Enter phone number", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                if (!IS_ALL_GRANTED) {
+                    requestAllPermissions();
 
-                if (TextUtils.isEmpty(password1)) {
-                    Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(email1)) {
-                    Toast.makeText(getApplicationContext(), "Enter email!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(name1)) {
-                    Toast.makeText(getApplicationContext(), "Enter name!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(location1)) {
-                    Toast.makeText(getApplicationContext(), "Enter location!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(city1)) {
-                    Toast.makeText(getApplicationContext(), "Enter city!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+                } else
 
-                dialog.show();
-
-                Query fireQuery = ref.child("user").orderByChild("phone").equalTo(phone1);
-                fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.getValue() == null) {
-                            //create user
-
-                            user user = new user();
-                            user.setEmail(email1);
-                            user.setPassword(password1);
-                            user.setPhone(phone1);
-                            user.setCity(city1);
-                            user.setLocation(location1);
-                            user.setZip(zip1);
-                            user.setStreet(street1);
-                            user.setName(name1);
-                            user.setTypeUser(typeUser);
-                            ref.child("user").push().setValue(user);
-                            Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(signup.this, Login.class));
-                            finish();
-                        } else {
-                            dialog.dismiss();
-                            Toast.makeText(getApplicationContext(), "This account already exists", Toast.LENGTH_SHORT).show();
+                { Beginsignup(); }
 
 
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-                        dialog.dismiss();
-                        Toast.makeText(getApplicationContext(), "no connection  ", Toast.LENGTH_LONG).show();
-
-                    }
-                });
 
 
             }
         });
 
+
+
+
+    }
+    public void Beginsignup() {
+        IS_GPS_GRANTED = ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION)
+                == PackageManager.PERMISSION_GRANTED;
+
+        if (!IS_GPS_GRANTED)
+            requestGpsPermission();
+
+
+//        if (!IS_PHONE_STATE_GRANTED)
+//            requestAudioPermission();
+
+        if ( IS_GPS_GRANTED) {
+            signup();
+        }
+    }
+
+    public void signup(){
+        gps = new GPSTracker(signup.this);
+        final double  latitude = gps.getLatitude();
+        final double longitude = gps.getLongitude();
+
+        final String email1 = email.getText().toString().trim();
+        final String password1 = password.getText().toString().trim();
+        final String phone1 = phone.getText().toString().trim();
+        final String name1 = name.getText().toString().trim();
+        final String location1 = location.getText().toString().trim();
+        final String city1 = city.getText().toString().trim();
+
+        final String zip1 = zip.getText().toString();
+        final String street1 = street.getText().toString();
+
+        if (TextUtils.isEmpty(phone1)) {
+            Toast.makeText(getApplicationContext(), "Enter phone number", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(password1)) {
+            Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(email1)) {
+            Toast.makeText(getApplicationContext(), "Enter email!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(name1)) {
+            Toast.makeText(getApplicationContext(), "Enter name!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(location1)) {
+            Toast.makeText(getApplicationContext(), "Enter location!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (TextUtils.isEmpty(city1)) {
+            Toast.makeText(getApplicationContext(), "Enter city!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        dialog.show();
+
+        Query fireQuery = ref.child("user").orderByChild("phone").equalTo(phone1);
+        fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) {
+                    //create user
+
+                    user user = new user();
+                    user.setEmail(email1);
+                    user.setPassword(password1);
+                    user.setPhone(phone1);
+                    user.setCity(city1);
+                    user.setLocation(location1);
+                    user.setZip(zip1);
+                    user.setStreet(street1);
+                    user.setName(name1);
+                    user.setTypeUser(typeUser);
+                    user.setLatitude(latitude);
+                    user.setLongitude(longitude);
+                    if(gps.canGetLocation()){
+                        ref.child("user").push().setValue(user);
+                        Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(signup.this, Login.class));
+                        finish();}
+                    else{gps.showSettingsAlert();}
+                } else {
+                    dialog.dismiss();
+                    Toast.makeText(getApplicationContext(), "This account already exists", Toast.LENGTH_SHORT).show();
+
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                dialog.dismiss();
+                Toast.makeText(getApplicationContext(), "no connection  ", Toast.LENGTH_LONG).show();
+
+            }
+        });
     }
         @Override
         protected void onResume() {
             super.onResume();
             dialog.dismiss();
         }
+
+    private void requestAllPermissions() {
+        // BEGIN_INCLUDE(contacts_permission_request)
+        dialog.dismiss();
+        if ( ActivityCompat.shouldShowRequestPermissionRationale(this,
+                Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+            // Provide an additional rationale to the user if the permission was not granted
+            // and the user would benefit from additional context for the use of the permission.
+            // For example, if the request has been denied previously.
+            Log.i("LoginActivity",
+                    "Displaying all permission rationale to provide additional context.");
+
+            // Display a SnackBar with an explanation and a button to trigger the request.
+
+            //Toast.makeText(getApplicationContext(),"التطبيق بحاجة لمنح صلاحيات", Toast.LENGTH_SHORT).show();
+            Snackbar.make(mLayout, "التطبيق بحاجة لمنح صلاحيات",
+                    Snackbar.LENGTH_INDEFINITE)
+                    .setAction("موافق", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ActivityCompat
+                                    .requestPermissions(signup.this, PERMISSIONS_ALL, REQUEST_ALL);
+                        }
+                    })
+                    .show();
+        } else {
+            // Contact permissions have not been granted yet. Request them directly.
+            ActivityCompat.requestPermissions(this, PERMISSIONS_ALL, REQUEST_ALL);
+            // BeginCapture();
+
+        }
+        // END_INCLUDE(contacts_permission_request)
+    }
+
+
+    private void requestGpsPermission() {
+        dialog.dismiss();
+        Log.i("Login", "Location permission has NOT been granted. Requesting permission.");
+
+        // BEGIN_INCLUDE(camera_permission_request)
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this,
+                android.Manifest.permission.ACCESS_FINE_LOCATION)) {
+
+            Snackbar.make(mLayout, "التطبيق بحاجة لصلاحية تحديد المواقع",
+                    Snackbar.LENGTH_INDEFINITE)
+                    .setAction("موافق", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            ActivityCompat.requestPermissions(signup.this,
+                                    new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                                    REQUEST_GPS);
+                        }
+                    })
+                    .show();
+        } else {
+
+            // Camera permission has not been granted yet. Request it directly.
+            ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION},
+                    REQUEST_GPS);
+        }
+        // END_INCLUDE(camera_permission_request)
+    }
 }

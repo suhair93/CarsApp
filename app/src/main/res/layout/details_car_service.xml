@@ -4,10 +4,42 @@
     android:background="@drawable/bg1"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layoutDirection="ltr"
+        android:background="@color/colorPrimaryDark"
+        >
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/back"
+            android:src="?android:attr/homeAsUpIndicator" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/details"
+            android:gravity="center"
+            android:textColor="@color/baj"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:fontFamily="casual"
+            android:layout_marginLeft="30dp"/>
+
+
+
+    </Toolbar>
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="20dp"
+        android:layout_margin="10dp"
         android:layout_gravity="center"
         android:background="@color/baj"
         android:gravity="center"
@@ -15,18 +47,37 @@
         android:orientation="vertical">
 
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginRight="30dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center"
+
+                >
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
 
 <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
@@ -42,13 +93,14 @@
                 android:layout_height="wrap_content"
                 android:text="car type"
                 android:id="@+id/car_type"
+                android:textColor="@color/colorPrimaryDark"
                 android:fontFamily="casual"
                 android:textStyle="bold"
                 android:textSize="17dp"/>
 </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
@@ -64,12 +116,13 @@
                     android:text="car model"
                     android:id="@+id/car_model"
                     android:fontFamily="casual"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textStyle="bold"
                     android:textSize="17dp"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
@@ -86,10 +139,11 @@
                     android:id="@+id/car_price"
                     android:fontFamily="casual"
                     android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="17dp"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
             <TextView
@@ -108,48 +162,130 @@
                     android:fontFamily="casual"
                     android:id="@+id/typeview"
                     android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
                     android:textSize="17dp"/>
 
             </LinearLayout>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/car_details"
-                android:layout_marginTop="10dp"
+
                 android:fontFamily="casual"
 
                 android:textStyle="bold"
                 android:textSize="17dp"/>
+            </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:id="@+id/img"
+
+                    android:src="@android:drawable/ic_menu_report_image"
+                    />
+            </LinearLayout>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="car details "
-                android:layout_marginTop="10dp"
+
                 android:fontFamily="casual"
                 android:id="@+id/car_details"
+                android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="17dp"/>
+
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center"
-                android:gravity="center"
-                >
+                android:orientation="horizontal">
 
-
-                <ImageButton
-                    android:layout_width="150dp"
-                    android:layout_height="150dp"
-                    android:background="@android:drawable/ic_menu_upload"
-                    />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_name"
+                    android:paddingRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="company"
+                    android:id="@+id/company_name"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17dp"/>
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_address"
+                    android:paddingRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_address"
+                    android:id="@+id/company_address"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_phone"
+                    android:paddingRight="10dp"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/company_phone"
+                    android:id="@+id/company_phone"
+                    android:fontFamily="casual"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="17dp"/>
+            </LinearLayout>
         </LinearLayout>
 
 
+
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/c3"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="19dp"
+            android:text=" payment "
+            android:id="@+id/buy"
+
+            android:layout_gravity="end"
+
+            />
     </LinearLayout>
+</LinearLayout>
 </ScrollView>

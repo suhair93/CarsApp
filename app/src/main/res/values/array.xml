@@ -1,7 +1,6 @@
 <resources>
     <string-array name="spinnerItems_service">
         <item>@string/saleing</item>
-        <item>@string/maintenance</item>
         <item>@string/Leasing</item>
 
 

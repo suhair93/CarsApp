@@ -52,6 +52,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/car_type"
                     android:paddingLeft="10dp"
+                    android:id="@+id/typeService"
                     android:paddingRight="10dp"
                     android:textStyle="bold"
                     android:fontFamily="casual"
@@ -169,6 +170,32 @@
                         android:textSize="17sp"
 
                         />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/model"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/details"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/number"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/userid"
+                        android:visibility="gone"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/url_img"
+                        android:visibility="gone"/>
                 </LinearLayout>
             </LinearLayout>
 
