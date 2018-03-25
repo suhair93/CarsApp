@@ -6,4 +6,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.cars.cars.MapsActivity" />
+    />
+    <!--tools:context="com.cars.cars.MapsMarkerActivity"-->
+

@@ -61,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_gravity="center"
+                android:gravity="center"
 
                 >
 
@@ -166,15 +167,7 @@
                     android:textSize="17dp"/>
 
             </LinearLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/car_details"
 
-                android:fontFamily="casual"
-
-                android:textStyle="bold"
-                android:textSize="17dp"/>
             </LinearLayout>
 
                 <ImageView
@@ -184,18 +177,56 @@
 
                     android:src="@android:drawable/ic_menu_report_image"
                     />
-            </LinearLayout>
+            </LinearLayout>.  <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/car_details"
+
+                android:fontFamily="casual"
+
+                android:textStyle="bold"
+                android:textSize="17dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="car details "
-
                 android:fontFamily="casual"
                 android:id="@+id/car_details"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold"
                 android:textSize="17dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="information "
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="casual"
 
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="casual"
+                    android:id="@+id/info"
+                    android:textStyle="bold"
+                    android:textSize="17dp"/>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -205,7 +236,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/company_name"
+                    android:text="@string/name"
                     android:paddingRight="10dp"
                     android:fontFamily="casual"
                     android:textStyle="bold"
@@ -228,7 +259,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/company_address"
+                    android:text="@string/location"
                     android:paddingRight="10dp"
                     android:fontFamily="casual"
                     android:textStyle="bold"
@@ -251,7 +282,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/company_phone"
+                    android:text="@string/phone_number"
                     android:paddingRight="10dp"
                     android:fontFamily="casual"
                     android:textStyle="bold"
@@ -276,7 +307,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/c3"
+            android:background="@color/colorPrimary"
             android:textStyle="bold"
             android:textColor="@color/white"
             android:textSize="19dp"

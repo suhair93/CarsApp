@@ -60,13 +60,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
+                    android:gravity="center"
 
                     >
 
                     <LinearLayout
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-
                         android:orientation="vertical"
 
                         >
@@ -171,16 +171,7 @@
                                 android:textStyle="bold" />
                         </LinearLayout>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginRight="10dp"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="casual"
-                            android:text="@string/part_details"
 
-                            android:textSize="17dp"
-                            android:textStyle="bold" />
                     </LinearLayout>
 
                     <ImageView
@@ -190,6 +181,22 @@
                         android:src="@android:drawable/ic_menu_report_image" />
 
                 </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="casual"
+                    android:text="@string/part_details"
+
+                    android:textSize="17dp"
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/part_details"
@@ -202,6 +209,11 @@
                     android:textSize="17dp"
                     android:textStyle="bold" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/black" />
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -210,21 +222,49 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="casual"
+                        android:text="information "
+
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="casual"
+                        android:text=""
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="casual"
+                        android:paddingRight="10dp"
                         android:text="@string/company_name"
-                        android:paddingRight="10dp"
-                        android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="company"
                         android:id="@+id/company_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="casual"
-                        android:textStyle="bold"
+                        android:text="company"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -233,21 +273,23 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/company_address"
-                        android:paddingRight="10dp"
                         android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="17dp"/>
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:paddingRight="10dp"
                         android:text="@string/company_address"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
+                    <TextView
                         android:id="@+id/company_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:fontFamily="casual"
-                        android:textStyle="bold"
+                        android:text="@string/company_address"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -256,20 +298,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/company_phone"
-                        android:paddingRight="10dp"
                         android:fontFamily="casual"
-                        android:textStyle="bold"
-                        android:textSize="17dp"/>
+                        android:paddingRight="10dp"
+                        android:text="@string/company_phone"
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
+
                     <TextView
+                        android:id="@+id/company_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/company_phone"
-                        android:id="@+id/company_phone"
                         android:fontFamily="casual"
-                        android:textStyle="bold"
+                        android:text="@string/company_phone"
                         android:textColor="@color/colorPrimaryDark"
-                        android:textSize="17dp"/>
+                        android:textSize="17dp"
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 

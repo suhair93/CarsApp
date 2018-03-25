@@ -9,31 +9,25 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/leasing_request"
-            android:title="@string/Leasing_Requests" />
+            android:title="@string/Rent_request" />
+
         <item
             android:id="@+id/sale_request"
             android:title="@string/sale_requests" />
         <item
             android:id="@+id/maintenance_request"
             android:title="@string/Maintenance_Requests" />
+
+        <item
+            android:id="@+id/all_rent"
+            android:title="@string/all_rent" />
         </group>
        </menu>
     </item>
 
 
-    <item
-        android:title="@string/setting"
-       >
-<menu>
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/update_info"
-            android:title="@string/Update_account"
-             />
 
-      </group>
-</menu>
-    </item>
+
 
 
     <group android:checkableBehavior="single">

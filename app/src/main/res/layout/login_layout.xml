@@ -59,8 +59,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/phone_number"
-                    android:fontFamily="casual"
-
                     android:inputType="text"
                     android:textColor="@color/black"
                     android:textColorHint="@color/black"
@@ -105,8 +103,6 @@
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textSize="22sp"
-                android:fontFamily="casual"
-
                 android:text="@string/login"
                />
             <TextView
@@ -115,7 +111,6 @@
                 android:text="@string/or"
                 android:padding="5dp"
                 android:layout_gravity="center"
-                android:fontFamily="casual"
                 android:textColor="@color/black"
                 android:textSize="20dp"/>
             <Button
@@ -130,7 +125,6 @@
                 android:textStyle="bold"
                 android:textSize="22sp"
                 android:textColor="@color/baj"
-                android:fontFamily="casual"
                 android:text="@string/signup"
                 />
         </LinearLayout>

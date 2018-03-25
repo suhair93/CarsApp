@@ -31,8 +31,7 @@
             android:textColor="@color/baj"
             android:textSize="25sp"
             android:textStyle="bold"
-            android:fontFamily="casual"
-            android:layout_marginLeft="30dp"/>
+             android:layout_marginLeft="30dp"/>
 
 
         <RelativeLayout
@@ -48,8 +47,7 @@
                 android:id="@+id/signup_btn"
                 android:text="@string/next"
                 android:textColor="@color/baj"
-                android:fontFamily="casual"
-                android:textStyle="bold"
+                 android:textStyle="bold"
                 android:textSize="22sp"
                 android:padding="10dp"/>
 
@@ -73,8 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/phone_number"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:inputType="text"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -90,8 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/name"
-        android:fontFamily="casual"
-        android:textStyle="bold"
+         android:textStyle="bold"
         android:inputType="text"
         android:textColor="@color/black"
         android:textSize="16sp" />
@@ -108,8 +104,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/email"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:inputType="text"
             android:textColor="@color/black"
 
@@ -127,8 +122,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:inputType="text"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -147,8 +141,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/street"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:inputType="text"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -166,8 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/location"
-            android:fontFamily="casual"
-            android:textStyle="bold"
+             android:textStyle="bold"
             android:inputType="text"
             android:textColor="@color/black"
             android:textSize="16sp" />
@@ -189,8 +181,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/zip"
-                android:fontFamily="casual"
-                android:textStyle="bold"
+                 android:textStyle="bold"
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -208,8 +199,7 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:hint="@string/city"
-                android:fontFamily="casual"
-                android:textStyle="bold"
+                 android:textStyle="bold"
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
@@ -228,8 +218,7 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:fontFamily="casual"
-        android:text="@string/type"/>
+         android:text="@string/type"/>
         <RadioGroup
             android:id="@+id/type"
             android:layout_width="wrap_content"
@@ -238,8 +227,7 @@
             android:textStyle="bold"
 
             android:textSize="18sp"
-            android:fontFamily="casual"
-            android:orientation="horizontal">
+             android:orientation="horizontal">
 
             <RadioButton
                 android:id="@+id/radioCompany"
@@ -248,7 +236,6 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:fontFamily="casual"
 
                 android:text="@string/company"
                 android:checked="true" />
@@ -259,8 +246,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:fontFamily="casual"
-                android:layout_height="wrap_content"
+                 android:layout_height="wrap_content"
                 android:text="@string/customer" />
 
         </RadioGroup>

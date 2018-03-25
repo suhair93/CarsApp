@@ -53,17 +53,10 @@ public class BaseCardFormActivity extends AppCompatActivity implements OnCardFor
         // هما حفظنا اليوزر نيم تبع الشركه وهو رقم الموبايل في متغير من نوع سترنج
         userid = prefs.getString(Keys.KEY_COMPANY, "");
 
-        SharedPreferences data = getSharedPreferences("data_payment", MODE_PRIVATE);
 
-      //  if (extras != null) {
-            typeC= data.getString("typecar","");
-            modelC= data.getString("modelcar","");
-            namecustomer= data.getString("name_custome","");
-            typeViewC= data.getString("typeview","");
-            id_company= data.getString("id_company","");
 
-    //    }
         send = (Button)findViewById(R.id.send_request);
+        send.setVisibility(View.GONE);
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

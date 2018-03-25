@@ -34,19 +34,6 @@
     </item>
 
 
-    <item
-        android:title="@string/setting"
-       >
-<menu>
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/update_info"
-            android:title="@string/Update_account"
-             />
-
-      </group>
-</menu>
-    </item>
 
 
     <group android:checkableBehavior="single">

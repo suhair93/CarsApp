@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -15,11 +14,9 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.cars.cars.DarkThemeActivity;
 import com.cars.cars.Keys;
-import com.cars.cars.MapsActivity;
 import com.cars.cars.R;
-import com.cars.cars.SampleActivity;
-import com.cars.cars.adapter.service_adapter;
-import com.cars.cars.models.service;
+import com.cars.cars.models.leasing_request;
+import com.cars.cars.models.saeling_request;
 import com.cars.cars.models.user;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,12 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class details_car extends AppCompatActivity {
 
-    TextView type,price,model,details,typeView,company_name,company_phone,company_address;
+    TextView type,price,model,details,typeView,company_name,company_phone,company_address,typeUser;
     String typeC="",priceC="",modelC="",detailsC="",typeViewC="",userid="",userid_forlist,imageC="";
     String namecustomer="";
     ImageView image;
@@ -71,6 +65,8 @@ public class details_car extends AppCompatActivity {
         model = (TextView)findViewById(R.id.car_model);
         details = (TextView)findViewById(R.id.car_details);
         typeView = (TextView)findViewById(R.id.typeview);
+        typeUser = (TextView)findViewById(R.id.info);
+
         company_address = (TextView)findViewById(R.id.company_address);
         company_name = (TextView)findViewById(R.id.company_name);
         company_phone = (TextView)findViewById(R.id.company_phone);
@@ -102,18 +98,29 @@ public class details_car extends AppCompatActivity {
            buy.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {
-                   SharedPreferences.Editor editor1 = getSharedPreferences("data_payment", MODE_PRIVATE).edit();
-                   editor1.putString("typecar",typeC);
-                   editor1.putString("modelcar",modelC);
-                   editor1.putString("typeview",typeViewC);
-                   editor1.putString("name_custome",namecustomer);
-                   editor1.putString("id_company",userid_forlist);
+                   if(typeViewC.equals(getString(R.string.Leasing))){
+                       leasing_request l = new leasing_request();
+                       l.setCompany_id(userid_forlist);
+                       l.setCustomer_id(userid);
+                       l.setName_customer(namecustomer);
+                       l.setTypeview(typeViewC);
+                       l.setType_service(typeC);
+                       l.setModel_service(modelC);
+                       ref.child("leasing_request").push().setValue(l);
+                       Toast.makeText(details_car.this, "done ", Toast.LENGTH_LONG).show();
+                   }
+                   else if(typeViewC.equals(getString(R.string.saleing))){
+                       saeling_request l = new saeling_request();
+                       l.setCompany_id(userid_forlist);
+                       l.setCustomer_id(userid);
+                       l.setName_customer(namecustomer);
+                       l.setTypeview(typeViewC);
+                       l.setType_service(typeC);
+                       l.setModel_service(modelC);
+                       ref.child("saeling_request").push().setValue(l);
+                       Toast.makeText(details_car.this, "done ", Toast.LENGTH_LONG).show();
+                   }
                    Intent i = new Intent(details_car.this, DarkThemeActivity.class);
-//                   i.putExtra("typecar",typeC);
-//                   i.putExtra("modelcar",modelC);
-//                   i.putExtra("typeview",typeViewC);
-//                   i.putExtra("name_custome",namecustomer);
-//                   i.putExtra("id_company",userid_forlist);
                    startActivity(i);
                }
            });
@@ -135,6 +142,7 @@ public class details_car extends AppCompatActivity {
                         company_address.setText(user.getStreet());
                         company_name.setText(user.getName());
                         company_phone.setText(user.getPhone());
+                        typeUser.setText(user.getTypeUser());
 
                     }
                 }

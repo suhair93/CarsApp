@@ -37,7 +37,7 @@
     <string name="price">price :</string>
     <string name="buy">buy</string>
     <string name="price_car">car price</string>
-    <string name="details">Details :</string>
+    <string name="details">Details  </string>
 
     <string name="part_name">part name</string>
     <string name="part_model">part model</string>
@@ -66,6 +66,7 @@
     <string name="are_u_sure_exit">are you sure exit?</string>
     <string name="yes">YES</string>
     <string name="no">NO</string>
+
     <string name="part_number">part number</string>
     <string name="Manage_requests_buy"> Manage requests buy </string>
     <string name="Manage_requests_maintenance">Manage requests maintenance</string>
@@ -89,6 +90,13 @@
     <string name="send_request">send request</string>
     <string name="model">model </string>
     <string name="type_service">type service </string>
+    <string name="all_rent">view requests the rent </string>
+    <string name="title"> Enter your car information </string>
+    <string name="company_choose"> The company is choose : </string>
+    <string name="info">customer data..</string>
+    <string name="google_maps_key">AIzaSyAUMINleulYtTnHOtBz9-GikRpT6cBGTkM</string>
+
+
 
 
 

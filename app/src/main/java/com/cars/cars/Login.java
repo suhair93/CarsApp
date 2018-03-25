@@ -3,6 +3,7 @@ package com.cars.cars;
 import android.*;
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
@@ -41,6 +42,9 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
+
 
 /**
  * Created by locall on 2/14/2018.
@@ -76,6 +80,12 @@ public class Login  extends AppCompatActivity {
             window1.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window1.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Bold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
         // للانتظار قبل الذهاب للرئيسية
         dialog = new ProgressDialog(this);
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
@@ -207,5 +217,8 @@ public class Login  extends AppCompatActivity {
 
 
 
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 }

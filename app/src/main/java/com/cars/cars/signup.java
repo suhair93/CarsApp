@@ -3,6 +3,7 @@ package com.cars.cars;
 import android.*;
 import android.Manifest;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
@@ -30,6 +31,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by locall on 3/4/2018.
@@ -69,6 +76,12 @@ public class signup extends AppCompatActivity{
             window1.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window1.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
         }
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Bold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
         mLayout = findViewById(R.id.view);
         name = (EditText) findViewById(R.id.name);
         phone = (EditText) findViewById(R.id.phone);
@@ -80,7 +93,7 @@ public class signup extends AppCompatActivity{
         email = (EditText) findViewById(R.id.email);
         radioGroupType = (RadioGroup) findViewById(R.id.type);
         next = (TextView) findViewById(R.id.signup_btn);
-        back = (ImageView) findViewById(R.id.back);
+
 
         // للانتظار قبل الذهاب للواجهة التالية
         dialog = new ProgressDialog(this);
@@ -92,7 +105,7 @@ public class signup extends AppCompatActivity{
         database = FirebaseDatabase.getInstance();
         ref = database.getReference();
 
-
+        back = (ImageView) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -204,12 +217,14 @@ public class signup extends AppCompatActivity{
 
         dialog.show();
 
-        Query fireQuery = ref.child("user").orderByChild("phone").equalTo(phone1);
+        Query fireQuery = ref.child("user").orderByChild("phone").equalTo(phone1) ;
         fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() == null) {
+                if (dataSnapshot.getValue() != null) {
+
                     //create user
+
 
                     user user = new user();
                     user.setEmail(email1);
@@ -312,5 +327,10 @@ public class signup extends AppCompatActivity{
                     REQUEST_GPS);
         }
         // END_INCLUDE(camera_permission_request)
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
 }

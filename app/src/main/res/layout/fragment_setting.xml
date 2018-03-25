@@ -13,6 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
             android:orientation="vertical">
 
@@ -28,12 +29,7 @@
                     android:inputType="text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-            <android.support.design.widget.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="5dp">
+
 
             <EditText
                 android:id="@+id/name"
@@ -45,13 +41,7 @@
                 android:inputType="text"
                 android:textColor="@color/black"
                 android:textSize="16sp" />
-        </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp">
+
 
                 <EditText
                     android:id="@+id/email"
@@ -64,13 +54,7 @@
                     android:textColor="@color/black"
 
                     android:textSize="16sp" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp">
+
 
                 <EditText
                     android:id="@+id/password"
@@ -82,15 +66,7 @@
                     android:inputType="text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-            </android.support.design.widget.TextInputLayout>
 
-
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/street"
@@ -102,14 +78,7 @@
                     android:inputType="text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
 
-                android:layout_marginTop="5dp">
 
                 <EditText
                     android:id="@+id/location"
@@ -121,19 +90,7 @@
                     android:inputType="text"
                     android:textColor="@color/black"
                     android:textSize="16sp" />
-            </android.support.design.widget.TextInputLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="ltr"
-                android:orientation="horizontal">
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
 
-                    android:layout_marginTop="5dp">
 
                     <EditText
                         android:id="@+id/zip"
@@ -145,14 +102,6 @@
                         android:inputType="text"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
-                </android.support.design.widget.TextInputLayout>
-
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="5dp">
 
                     <EditText
                         android:id="@+id/city"
@@ -165,7 +114,7 @@
                         android:inputType="text"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
-                </android.support.design.widget.TextInputLayout>
+
             </LinearLayout>
 
 
@@ -183,5 +132,5 @@
                 android:layout_marginTop="10dp"
                 android:background="@color/colorPrimaryDark"/>
         </LinearLayout>
-    </LinearLayout>
-</ScrollView>
+    </ScrollView>
+

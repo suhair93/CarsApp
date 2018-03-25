@@ -3,14 +3,9 @@ package com.cars.cars.company;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -21,19 +16,15 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.Toast;
 
 import com.cars.cars.R;
-import com.cars.cars.customer.Home_customer;
-import com.cars.cars.customer.Leasing_request;
-import com.cars.cars.customer.MainCustomer;
-import com.cars.cars.customer.Maintenance_request_customer;
-import com.cars.cars.customer.Sale_request_customer;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 import static java.lang.System.exit;
 
@@ -51,6 +42,11 @@ public class MainCompany extends AppCompatActivity {
         setContentView(R.layout.main_company);
 
 
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Bold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
         /***********************************************************/
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -210,15 +206,15 @@ public class MainCompany extends AppCompatActivity {
                 alertdialog2.show();
                 break;
 
-            case R.id.update_info:
-                fragment = new SettingFragment();
-                toolbar.setTitle(R.string.Update_account);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                break;
+//            case R.id.update_info:
+//                fragment = new SettingFragment();
+//                toolbar.setTitle(R.string.Update_account);
+//                fragmentManager = getSupportFragmentManager();
+//                fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frame, fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//                break;
 
             default:
                 fragment = new Home_company();
@@ -277,6 +273,9 @@ public class MainCompany extends AppCompatActivity {
         alertdialog.show();
     }
 
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 }

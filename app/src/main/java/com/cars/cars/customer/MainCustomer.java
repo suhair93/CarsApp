@@ -1,7 +1,9 @@
 package com.cars.cars.customer;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,7 +23,11 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.cars.cars.R;
+import com.cars.cars.company.MainCompany;
 import com.cars.cars.company.SettingFragment;
+
+import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 import static java.lang.System.exit;
 
@@ -38,6 +44,12 @@ public class MainCustomer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_customer);
 
+
+        CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
+                .setDefaultFontPath("fonts/Roboto-Bold.ttf")
+                .setFontAttrId(R.attr.fontPath)
+                .build()
+        );
 
         /***********************************************************/
 
@@ -140,24 +152,34 @@ public class MainCustomer extends AppCompatActivity {
                 break;
 
             case R.id.maintenance_request:
-                fragment = new Maintenance_request_customer();
+             //   fragment = new Maintenance_request_customer();
                 toolbar.setTitle(R.string.Maintenance_Requests);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                Intent i = new Intent(MainCustomer.this,Maintenance_request_customer.class);
+                startActivity(i);
+//                fragmentManager = getSupportFragmentManager();
+//                fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frame, fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
                 break;
             case R.id.leasing_request:
-                fragment = new Leasing_request();
-                toolbar.setTitle(R.string.Leasing_Requests);
+                fragment = new Rent_customer();
+                toolbar.setTitle(R.string.Rent_request);
                 fragmentManager = getSupportFragmentManager();
                 fragmentTransaction = fragmentManager.beginTransaction();
                 fragmentTransaction.replace(R.id.frame, fragment);
                 fragmentTransaction.addToBackStack(null);
                 fragmentTransaction.commit();
                 break;
-
+            case R.id.all_rent:
+                fragment = new manage_requests_rent();
+                toolbar.setTitle(R.string.all_rent);
+                fragmentManager = getSupportFragmentManager();
+                fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.frame, fragment);
+                fragmentTransaction.addToBackStack(null);
+                fragmentTransaction.commit();
+                break;
             case R.id.logout:
                 AlertDialog.Builder builder2 = new AlertDialog.Builder(MainCustomer.this);
                 builder2.setMessage(R.string.are_u_sure_exit);
@@ -178,15 +200,15 @@ public class MainCustomer extends AppCompatActivity {
                 alertdialog2.show();
                 break;
 
-            case R.id.update_info:
-                fragment = new SettingFragment();
-                toolbar.setTitle(R.string.Update_account);
-                fragmentManager = getSupportFragmentManager();
-                fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.frame, fragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-                break;
+//            case R.id.update_info:
+//                fragment = new SettingFragment();
+//                toolbar.setTitle(R.string.Update_account);
+//                fragmentManager = getSupportFragmentManager();
+//                fragmentTransaction = fragmentManager.beginTransaction();
+//                fragmentTransaction.replace(R.id.frame, fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
+//                break;
 
             default:
                 fragment = new Home_customer();
@@ -244,7 +266,10 @@ public class MainCustomer extends AppCompatActivity {
         AlertDialog alertdialog = builder.create();
         alertdialog.show();
     }
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 
 
 }

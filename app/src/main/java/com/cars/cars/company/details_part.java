@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.cars.cars.DarkThemeActivity;
 import com.cars.cars.Keys;
 import com.cars.cars.R;
+import com.cars.cars.models.leasing_request;
+import com.cars.cars.models.saeling_request;
 import com.cars.cars.models.user;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,8 +27,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class details_part extends AppCompatActivity {
 
-    TextView name,price,model,details,number,company_name,company_phone,company_address;
-    String nameC="",priceC="",modelC="",detailsC="",numberC="",userid_forlist="",userid="",imageC="";
+    TextView name,price,model,details,number,company_name,company_phone,company_address,typeUser;
+    String nameC="",priceC="",modelC="",detailsC="",numberC="",userid_forlist="",userid="",imageC="",namecustomer="";
     ImageView image;
     public Bundle extras;
     Bitmap bitmap;
@@ -62,6 +64,8 @@ public class details_part extends AppCompatActivity {
         number = (TextView)findViewById(R.id.part_number);
         image = (ImageView) findViewById(R.id.img);
         buy =(Button)findViewById(R.id.buy);
+        typeUser = (TextView)findViewById(R.id.info);
+
         company_address = (TextView)findViewById(R.id.company_address);
         company_name = (TextView)findViewById(R.id.company_name);
         company_phone = (TextView)findViewById(R.id.company_phone);
@@ -73,6 +77,7 @@ public class details_part extends AppCompatActivity {
             detailsC= extras.getString("details");
             numberC= extras.getString("number");
             userid_forlist= extras.getString("userid");
+            namecustomer= extras.getString("userid");
             imageC= extras.getString("image");
 
             // bitmap = (Bitmap) getIntent().getParcelableExtra("image");
@@ -90,6 +95,16 @@ public class details_part extends AppCompatActivity {
             buy.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                        saeling_request l = new saeling_request();
+                        l.setCompany_id(userid_forlist);
+                        l.setCustomer_id(userid);
+                        l.setName_customer(namecustomer);
+                        l.setTypeview("saeling");
+                        l.setType_service(nameC);
+                        l.setModel_service(modelC);
+                        ref.child("saeling_request").push().setValue(l);
+                        Toast.makeText(details_part.this, "done ", Toast.LENGTH_LONG).show();
                     Intent i = new Intent(details_part.this, DarkThemeActivity.class);
                     startActivity(i);
                 }
@@ -110,6 +125,7 @@ public class details_part extends AppCompatActivity {
                         company_address.setText(user.getStreet());
                         company_name.setText(user.getName());
                         company_phone.setText(user.getPhone());
+                        typeUser.setText(user.getTypeUser());
 
                     }
                 }
@@ -120,6 +136,31 @@ public class details_part extends AppCompatActivity {
 
             }
         });
+
+
+        Query fireQuery1 = ref.child("user").orderByChild("phone").equalTo(userid);
+        fireQuery1.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                if (dataSnapshot.getValue() == null) {
+                    Toast.makeText(details_part.this, "Not found", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        user user = snapshot.getValue(user.class);
+                        namecustomer= user.getName();
+
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
 
     }
 }

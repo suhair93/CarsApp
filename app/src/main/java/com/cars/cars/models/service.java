@@ -14,11 +14,18 @@ public class service {
     private String type_service;
     private String typeView;
     private String imageURL;
-    private String city;
     private String company;
-    private String company_phone;
+    private String city;
     private String company_street;
     public service(){}
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
 
     public String getCompany() {
         return company;
@@ -36,13 +43,6 @@ public class service {
         this.type_service = type_service;
     }
 
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public String getCity() {
-        return city;
-    }
 
     public String getTypeView() {
         return typeView;
@@ -91,7 +91,6 @@ public class service {
     public String getDetails() {
         return details;
     }
-
 
     public void setUserid(String userid) {
         this.userid = userid;

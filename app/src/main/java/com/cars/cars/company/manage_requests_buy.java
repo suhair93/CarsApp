@@ -90,7 +90,7 @@ public class manage_requests_buy extends Fragment {
         });
 
         // تعريف الريساكل فيو وهي القائمه اللي بيظهر فيها الخدمات اللي بتقدمها الشركه
-        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleview_buy);
+        final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
         //ربط الادابتر باللست
         mAdapter = new saeling_adapter(getActivity(), serviceList);
         // لرسم شكل القائمه افقي
