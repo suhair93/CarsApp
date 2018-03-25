@@ -33,7 +33,7 @@ Context mContext;
         public MyViewHolder(View view) {
             super(view);
             details = (TextView) view.findViewById(R.id.details);
-            name_customer = (TextView) view.findViewById(R.id.name_customer);
+            name_customer = (TextView) view.findViewById(R.id.name);
             street = (TextView) view.findViewById(R.id.street);
             city = (TextView) view.findViewById(R.id.city);
             phone = (TextView) view.findViewById(R.id.phone);
