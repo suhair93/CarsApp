@@ -1,41 +1,39 @@
-<ScrollView
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg1"
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:orientation="vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layoutDirection="ltr"
-        android:background="@color/colorPrimaryDark"
-        >
 
-        <android.support.v7.widget.AppCompatImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/back"
-            android:src="?android:attr/homeAsUpIndicator" />
+        <Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/colorPrimaryDark"
+            android:layoutDirection="ltr">
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/details"
-            android:gravity="center"
-            android:textColor="@color/baj"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            android:fontFamily="casual"
-            android:layout_marginLeft="30dp"/>
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="?android:attr/homeAsUpIndicator" />
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="30dp"
+                android:gravity="center"
+                android:text="@string/details"
+                android:textColor="@color/baj"
+                android:textSize="25sp"
+                android:textStyle="bold" />
 
-    </Toolbar>
+
+        </Toolbar>
 
 
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,8 +57,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
                     android:gravity="center"
+                    android:orientation="horizontal"
 
                     >
 
@@ -79,7 +77,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:paddingRight="10dp"
                                 android:text="@string/part_name"
                                 android:textSize="17dp"
@@ -89,7 +86,6 @@
                                 android:id="@+id/part_name"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:text="part name"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="17dp"
@@ -104,7 +100,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:paddingRight="10dp"
                                 android:text="@string/part_number"
                                 android:textSize="17dp"
@@ -114,7 +109,6 @@
                                 android:id="@+id/part_number"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:text=" number"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="17dp"
@@ -130,7 +124,6 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginRight="10dp"
-                                android:fontFamily="casual"
                                 android:text="@string/part_model"
                                 android:textSize="17dp"
                                 android:textStyle="bold" />
@@ -139,7 +132,6 @@
                                 android:id="@+id/part_model"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:text="part model"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="17dp"
@@ -154,7 +146,6 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:paddingRight="10dp"
                                 android:text="@string/part_price"
                                 android:textSize="17dp"
@@ -164,7 +155,6 @@
                                 android:id="@+id/part_price"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="casual"
                                 android:text="part price"
                                 android:textColor="@color/colorPrimaryDark"
                                 android:textSize="17dp"
@@ -185,6 +175,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_margin="20dp"
                     android:background="@color/black" />
 
                 <TextView
@@ -192,7 +183,6 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="5dp"
-                    android:fontFamily="casual"
                     android:text="@string/part_details"
 
                     android:textSize="17dp"
@@ -203,7 +193,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
 
-                    android:fontFamily="casual"
                     android:text="part details "
                     android:textColor="@color/colorPrimaryDark"
                     android:textSize="17dp"
@@ -212,6 +201,7 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
+                    android:layout_margin="20dp"
                     android:background="@color/black" />
 
                 <LinearLayout
@@ -223,7 +213,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="casual"
                         android:text="information "
 
                         android:textSize="17dp"
@@ -234,7 +223,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:fontFamily="casual"
                         android:text=""
                         android:textSize="17dp"
                         android:textStyle="bold" />
@@ -248,7 +236,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:paddingRight="10dp"
                         android:text="@string/company_name"
                         android:textSize="17dp"
@@ -258,7 +245,6 @@
                         android:id="@+id/company_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:text="company"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="17dp"
@@ -273,7 +259,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:paddingRight="10dp"
                         android:text="@string/company_address"
                         android:textSize="17dp"
@@ -283,7 +268,6 @@
                         android:id="@+id/company_address"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:text="@string/company_address"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="17dp"
@@ -298,7 +282,6 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:paddingRight="10dp"
                         android:text="@string/company_phone"
                         android:textSize="17dp"
@@ -308,7 +291,6 @@
                         android:id="@+id/company_phone"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:fontFamily="casual"
                         android:text="@string/company_phone"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="17dp"
@@ -322,8 +304,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-
-                android:background="@color/c3"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
                 android:text=" payment "
                 android:textColor="@color/white"
                 android:textSize="19dp"

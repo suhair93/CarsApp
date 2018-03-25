@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.cars.cars.R;
 import com.cars.cars.models.leasing_request;
+import com.cars.cars.models.maintenance;
 
 import java.util.List;
 
@@ -20,22 +21,22 @@ public class maintenance_adapter extends RecyclerView.Adapter<maintenance_adapte
     AlertDialog alertDialog;
 Context mContext;
     String typeC="",priceC="",modelC="",detailsC="",typeViewC="",imageC="",type_service="",number="";
-  List<leasing_request> serviceList;
-  int pos =0;
+  List<maintenance> serviceList;
+
 
 
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        public TextView type,typeview,model,name_customer;
-        public ImageView img;
+        public TextView details,street,city,name_customer,phone;
         public CardView cardView;
 
         public MyViewHolder(View view) {
             super(view);
-            type = (TextView) view.findViewById(R.id.type_car);
+            details = (TextView) view.findViewById(R.id.details);
             name_customer = (TextView) view.findViewById(R.id.name_customer);
-            typeview = (TextView) view.findViewById(R.id.typeview);
-            model = (TextView) view.findViewById(R.id.model);
+            street = (TextView) view.findViewById(R.id.street);
+            city = (TextView) view.findViewById(R.id.city);
+            phone = (TextView) view.findViewById(R.id.phone);
 
             cardView =(CardView)view.findViewById(R.id.cv);
 
@@ -47,7 +48,7 @@ Context mContext;
     }
 
 
-    public maintenance_adapter(Context mContext, List<leasing_request> serviceList) {
+    public maintenance_adapter(Context mContext, List<maintenance> serviceList) {
         this.mContext = mContext;
         this.serviceList = serviceList;
         //this.orig=studentsList;
@@ -56,7 +57,7 @@ Context mContext;
     @Override
     public maintenance_adapter.MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.buy_row_item, parent, false);
+                .inflate(R.layout.maintenance_row_item, parent, false);
 
         return new maintenance_adapter.MyViewHolder(itemView);
     }
@@ -64,12 +65,13 @@ Context mContext;
 
     @Override
     public void onBindViewHolder(final maintenance_adapter.MyViewHolder holder, final int position) {
-      final leasing_request c = serviceList.get(position);
+      final maintenance c = serviceList.get(position);
 
-        holder.type.setText(c.getType_service());
-        holder.model.setText(c.getModel_service());
-        holder.typeview.setText(c.getTypeview());
-        holder.name_customer.setText(c.getName_customer());
+        holder.city.setText(c.getCity());
+        holder.street.setText(c.getStreet());
+        holder.details.setText(c.getDetails());
+        holder.phone.setText(c.getPhone());
+        holder.name_customer.setText(c.getName());
 
     }
 

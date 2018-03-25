@@ -13,8 +13,10 @@ import android.view.ViewGroup;
 import com.cars.cars.Keys;
 import com.cars.cars.R;
 import com.cars.cars.adapter.leasing_adapter;
+import com.cars.cars.adapter.maintenance_adapter;
 import com.cars.cars.adapter.saeling_adapter;
 import com.cars.cars.models.leasing_request;
+import com.cars.cars.models.maintenance;
 import com.cars.cars.models.saeling_request;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,9 +41,9 @@ public class manage_requests_leasing extends Fragment {
     DatabaseReference ref;
     DynamicBox box;
     String Token = "";
-    private List<leasing_request> serviceList = new ArrayList<>();
+    private List<maintenance> serviceList = new ArrayList<>();
     private RecyclerView recyclerView;
-    private leasing_adapter mAdapter;
+    private maintenance_adapter mAdapter;
     public manage_requests_leasing() {
         // Required empty public constructor
     }
@@ -69,8 +71,8 @@ public class manage_requests_leasing extends Fragment {
                 serviceList.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    leasing_request s = snapshot.getValue(leasing_request.class);
-                    if(s.getCompany_id().equals(Token)){
+                    maintenance s = snapshot.getValue(maintenance.class);
+                    if(s.getCompanyid().equals(Token)){
                         serviceList.add(s);
                         mAdapter.notifyDataSetChanged();}
                 }
@@ -89,7 +91,7 @@ public class manage_requests_leasing extends Fragment {
         // تعريف الريساكل فيو وهي القائمه اللي بيظهر فيها الخدمات اللي بتقدمها الشركه
         final RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.recycleview);
         //ربط الادابتر باللست
-        mAdapter = new leasing_adapter(getActivity(), serviceList);
+        mAdapter = new maintenance_adapter(getActivity(), serviceList);
         // لرسم شكل القائمه افقي
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         // ربط الريسايكل فيو بالأبتر

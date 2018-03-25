@@ -28,7 +28,6 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="50dp"
-        android:fontFamily="casual"
         android:textStyle="bold"/>
     <Spinner
         android:layout_width="match_parent"
@@ -52,7 +51,6 @@
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:layout_marginTop="20dp"
-        android:fontFamily="casual"
         android:textSize="21dp"
         android:textStyle="bold" />
 </LinearLayout>

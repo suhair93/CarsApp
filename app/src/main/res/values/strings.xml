@@ -93,7 +93,9 @@
     <string name="all_rent">view requests the rent </string>
     <string name="title"> Enter your car information </string>
     <string name="company_choose"> The company is choose : </string>
-    <string name="info">customer data..</string>
+    <string name="info">customer information :</string>
+    <string name="info1">company information :</string>
+
     <string name="google_maps_key">AIzaSyAUMINleulYtTnHOtBz9-GikRpT6cBGTkM</string>
 
 
