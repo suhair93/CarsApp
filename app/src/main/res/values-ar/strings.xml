@@ -72,6 +72,27 @@
     <string name="Manage_requests_leasing">إدارة طلبات الإيجار</string>
 
 
+    <string name="purchase">شراء</string>
+    <string name="valid">صحيح</string>
+    <string name="invalid">غير صحيح</string>
+    <string name="light_theme_form">Light Theme</string>
+    <string name="dark_theme_form">Dark Theme</string>
+    <string name="scan_with_card_io">Scan with card.io</string>
 
+
+
+    <string name="company_name">اسم الشركة </string>
+    <string name="buyer_name">اسم المشتري </string>
+    <string name="company_address">عنوان الشركة</string>
+    <string name="company_phone">هاتف الشركة</string>
+    <string name="payment">الدفع</string>
+    <string name="send_request">ارسال طلب</string>
+    <string name="model">الموديل </string>
+    <string name="type_service">نوع الخدمة</string>
+    <string name="all_rent">عرض طلبات الاستأجار </string>
+    <string name="title"> ادخل بيانات السيارة </string>
+    <string name="company_choose"> اختر الشركة : </string>
+    <string name="info">معلومات الزبون :</string>
+    <string name="info1">معلومات الشركة :</string>
 
 </resources>
