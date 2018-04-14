@@ -161,12 +161,14 @@ public class Maintenance_request_customer extends FragmentActivity implements
                                 .position(new LatLng(user.getLatitude(), user.getLongitude()))
                                 .title("me")
                                 .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-                        me.setTag(0);
+                        me.setTag(String.valueOf(0));
                         me.showInfoWindow();
                     }
                     if (user.getTypeUser().equals("company")) {
                         userlist.add(user);
 
+
+                        
                     }
                 }
 
@@ -174,7 +176,7 @@ public class Maintenance_request_customer extends FragmentActivity implements
                     m = mMap.addMarker(new MarkerOptions()
                             .position(new LatLng(userlist.get(i).getLatitude(), userlist.get(i).getLongitude()))
                             .title(userlist.get(i).getName()));
-                    m.setTag(userlist.get(i).getPhone().toString());
+                    m.setTag(String.valueOf(userlist.get(i).getPhone()));
                   //  m.showInfoWindow();
 
                     companyList.add(m);
@@ -201,7 +203,7 @@ public class Maintenance_request_customer extends FragmentActivity implements
     public boolean onMarkerClick(final Marker marker) {
 
         // Retrieve the data from the marker.
-        String clickCount = (String) marker.getTag();
+        String clickCount = String.valueOf(marker.getTag());
 
 
         if (clickCount != null) {

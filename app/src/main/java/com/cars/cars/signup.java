@@ -221,7 +221,7 @@ public class signup extends AppCompatActivity{
         fireQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.getValue() != null) {
+                if (dataSnapshot.getValue() == null) {
 
                     //create user
 
@@ -236,9 +236,10 @@ public class signup extends AppCompatActivity{
                     user.setStreet(street1);
                     user.setName(name1);
                     user.setTypeUser(typeUser);
-                    user.setLatitude(latitude);
-                    user.setLongitude(longitude);
+
                     if(gps.canGetLocation()){
+                        user.setLatitude(latitude);
+                        user.setLongitude(longitude);
                         ref.child("user").push().setValue(user);
                         Toast.makeText(getApplicationContext(), "Done", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(signup.this, Login.class));
@@ -246,7 +247,7 @@ public class signup extends AppCompatActivity{
                     else{gps.showSettingsAlert();}
                 } else {
                     dialog.dismiss();
-                    Toast.makeText(getApplicationContext(), "This account already exists", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "This account already exists", Toast.LENGTH_LONG).show();
 
 
                 }
